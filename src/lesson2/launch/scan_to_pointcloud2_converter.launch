@@ -3,18 +3,18 @@
 <launch>
 
     <!-- bag的地址与名称 -->
-    <arg name="bag_filename" default="/home/lx/bagfiles/lesson1.bag"/>
+    <arg name="bag_filename" default="/home/admins/SubstrateDevelopment/modules-3rd/Creating-2D-laser-slam-from-scratch/data/bagfiles/lesson1.bag"/>
 
     <!-- 使用bag的时间戳 -->
     <param name="use_sim_time" value="true" />
 
     <!-- 启动节点 -->
-    <node name="lesson2_scan_match_icp_node"
-        pkg="lesson2" type="lesson2_scan_match_icp_node" output="screen" />
+    <node name="lesson2_scan_to_pointclod2_converter_node"
+        pkg="lesson2" type="lesson2_scan_to_pointclod2_converter_node" output="screen" />
     
     <!-- launch rviz -->
     <node name="rviz" pkg="rviz" type="rviz" required="false"
-        args="-d $(find lesson2)/launch/scan_match_icp.rviz" />
+        args="-d $(find lesson2)/launch/scan2pointcloud.rviz" />
 
     <!-- play bagfile -->
     <node name="playbag" pkg="rosbag" type="play"

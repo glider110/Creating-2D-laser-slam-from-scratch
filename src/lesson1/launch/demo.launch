@@ -1,6 +1,8 @@
+
+
 <launch>
 
-    <!-- bag的地址与名称，需要改成自己电脑的对应的地址 -->
+    <!-- bag的地址与名称 -->
     <arg name="bag_filename" default="/home/admins/SubstrateDevelopment/modules-3rd/Creating-2D-laser-slam-from-scratch/data/bagfiles/lesson1.bag"/>
 
     <!-- 使用bag的时间戳 -->
@@ -14,4 +16,3 @@
         args="--clock $(arg bag_filename)" />
 
 </launch>
-
