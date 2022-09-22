@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- bag的地址与名称，需要改成自己电脑的对应的地址 -->
+    <arg name="bag_filename" default="/home/admins/SubstrateDevelopment/modules-3rd/Creating-2D-laser-slam-from-scratch/data/bagfiles/lesson1.bag"/>
+
+    <!-- 使用bag的时间戳 -->
+    <param name="use_sim_time" value="true" />
+
+    <!-- 启动节点 -->
+    <node name="lesson1_laser_scan_node" pkg="lesson1" type="lesson1_laser_scan_node" output="screen" />
+
+    <!-- play bagfile -->
+    <node name="playbag" pkg="rosbag" type="play"
+        args="--clock $(arg bag_filename)" />
+
+</launch>
+
